@@ -1,0 +1,179 @@
+﻿@model AlHabieb.Models.EmailFormModel
+@{
+    ViewBag.Title = "ContactUser";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+<style>
+    .area {
+        resize: none;
+    }
+</style>
+        <section id="pricing" class="home-section bg-gray paddingbot-60">
+            <div class="container marginbot-50">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow lightSpeedIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: lightSpeedIn;">
+                            <div class="section-heading text-center">
+                                <h2 class="h-bold">Contact Us</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="divider-short"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="map-responsive my-5">
+                    <iframe style="margin-left: auto;margin-right: auto;display: block; margin-bottom: 30px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6349272.246811103!2d39.66739929051711!3d39.01005310960826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2z2KrYsdmD2YrYpw!5e0!3m2!1sar!2seg!4v1548506987617" width="1150" height="370" frameborder="0" allowfullscreen=""></iframe>
+                </div><!--map-responsive-->
+            </div><!--col-md-6-->
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-4" style="margin-top: 80px;">
+                        <div>
+                            <div class="contact-info" style="margin-bottom:20px;">
+                                <i class="fa fa-home fa-2x" style="color: #296270;"></i>
+                                <div>
+                                    <p>Binghamton, New York</p>
+                                    <span>4343 Hinkle Deegan Lake Road</span>
+                                </div>
+                            </div>
+                            <div class="contact-info" style="margin-bottom: 20px;">
+                                <i class="fa fa-phone fa-2x" style="color: #296270"></i>
+                                <div>
+                                    <p>00 (958) 9865 562</p>
+                                    <span>Mon to Fri 9am to 6 pm</span>
+                                </div>
+                            </div>
+                            <div class="contact-info" style="margin-bottom: 20px;">
+                                <i class="fa fa-envelope fa-2x" style="color: #296270"></i>
+                                <div>
+                                    <p>support@colorlib.com</p>
+                                    Send us your query anytime
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12" style="margin-top: 80px;">
+                        <div class="form-wrapper">
+                            <div class="wow fadeInRight animated" data-wow-duration="2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInRight;">
+
+                                <div class="panel panel-skin">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Order Now <small>(It's free!)</small></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                                        <div id="errormessage"></div>
+
+                                        @using (Html.BeginForm("ContactUser", "Home", FormMethod.Post, new { @class = "contactUser_form", id = "contactUser_form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+                                                <div class="col-md-10 marginbot-10">
+                                                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.FromName, "", new { @class = "validation" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+                                                <div class="col-md-10 marginbot-10">
+                                                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.FromEmail, "", new { @class = "validation" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Telephone, new { @class = "col-md-2 control-label" })
+                                                <div class="col-md-10 marginbot-10">
+                                                    @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Telephone, "", new { @class = "validation" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+                                                <div class="col-md-10 marginbot-10">
+                                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "validation" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+                                                <div class="col-md-10 marginbot-10">
+                                                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control area", rows = "4",id="textMessage" })
+                                                    @Html.ValidationMessageFor(m => m.Message, "", new { @class = "validation", id = "textMessageError" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10 marginbot-10">
+                                                    <input type="submit" class="btn btn-skin btn-block btn-lg" value="Send" id="submitbutton" />
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+@section Scripts {
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(".validation").css('color', 'red');
+    </script>
+    <script type="text/javascript">
+
+    @if(TempData["Message"] != null) {<text>
+            $(window).load(function()
+                {
+                $(document).ready(function()
+                    {
+                    swal({
+                        title: "Message",
+                        text: "@TempData["Message"]",
+                        type: "success"
+                    });
+                });
+        }); </text>
+    }
+    </script>
+    <script>
+        var EmptyMessage = document.getElementById("textMessage");
+        $("#submitbutton").click(function () {
+            debugger;
+            if ($("#contactUser_form").valid()) {
+                //swal("Thank You!", "Your Email Has Been Sent Successfully, Wait Response  We Will Contact With You Due 4 Hours", "success");
+                swal({
+                    title: "Thank You!",
+                    text: "Your Email Has Been Sent Successfully, Wait Response  We Will Contact With You Due 4 Hours",
+                    icon: "success",
+                    button: "OK",
+                    confirmButtonColor: '#8CD4F5',
+                })
+            }
+            else {
+                $(".validation").show();
+                swal("OOPS!", "Enter Complete Valid Data", "error");
+            }
+            setTimeout(function () { }, 10000);
+            //if (EmptyMessage.innerText == "")
+            //{
+            //    $("#contactUser_form").valid(false);
+            //    $("#textMessageError").show();
+            //    swal("OOPS!", "Enter Complete Valid Data", "error");
+            //}
+
+        });
+    </script>
+}

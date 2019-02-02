@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+
+}
+<style>
+
+
+    .banner {
+        background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('../../Content/MyLayout/img/aboutus/s4.jpg');
+        background-size: cover;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        height: 80vh;
+        position: relative;
+    }
+
+    .img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFFFF;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    .about {
+        padding: 130px 0;
+        background-color: #fff;
+    }
+
+        .about .heading h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+        }
+
+            .about .heading h2 span {
+                color: #296270;
+            }
+
+        .about .heading p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #999999;
+            margin: 20px 0 60px;
+            padding: 0;
+        }
+
+        .about h3 {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        .about p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #999999;
+            margin: 20px 0 15px;
+            padding: 0;
+        }
+
+        .about h4 {
+            font-size: 15px;
+            font-weight: 500;
+            margin: 8px 0;
+        }
+
+            .about h4 i {
+                color: #296270;
+                margin-right: 10px;
+            }
+</style>
+@*<div class="container">
+    <div class="row">*@
+        <section class="banner">
+            <div class="container">
+                <div class="info">
+                    <a>home</a><span> / </span>
+                    <a>about us</a>
+                </div>
+            </div>
+            <img class="img" src="~/Content/MyLayout/img/aboutus/home_overlay.png">
+        </section>
+        <section class="about" id="about">
+            <div class="container">
+                <div class="heading text-center">
+                    <h2 class="wow fadeInDown animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+                        About
+                        <span>Us</span>
+                    </h2>
+                    <p class="wow fadeInUp animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        <br>
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 wow fadeInRight animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                        <img src="~/Content/MyLayout/img/aboutus/01.jpg" alt="about" class="img-fluid" width="100%">
+                    </div>
+                    <div class="col-lg-6 ">
+                        <h3 class="wow fadeInLeft animated animated p-5 animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Lorem ipsum dolor sit amet, consectetur </h3>
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam doloremque ea, veniam ipsa, ratione minus sequi debitis error officiis quis beatae nisi, voluptatibus, consequatur. Tenetur aperiam doloremque mollitia alias dolor modi corporis nisi cupiditate officia, at! Delectus aliquid nesciunt illo assumenda quos, soluta tempore sunt, excepturi! Dolores atque, voluptates minus asperiores a et necessitatibus, iusto consequuntur earum eaque repudiandae reprehenderit eligendi mollitia. .</p>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInLeft animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <i class="fa fa-star"></i>Awesome Design
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInRight animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                                    <i class="fa fa-star"></i>
+                                    Creative Design
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInLeft animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <i class="fa fa-star"></i>Better Client Service
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInRight animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                                    <i class="fa fa-star"></i>
+                                    Digital Marketing &amp; Branding
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInLeft animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                    <i class="fa fa-star"></i>Creative Design
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="wow fadeInRight animated animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                                    <i class="fa fa-star"></i>
+                                    Speed And Flexibility
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+@*</div>
+</div>*@

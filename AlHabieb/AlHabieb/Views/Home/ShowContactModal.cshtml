@@ -1,0 +1,81 @@
+﻿@model AlHabieb.Models.EmailFormModel
+    <style>
+        .area {
+            resize: none;
+        }
+        .rtl {
+            direction: rtl;
+        }
+
+    </style>
+<div id="modal-container" class="modal fade" tabindex="-1" role="dialog" style="height:100%;">
+    <div class="modal-dialog" role="document" style="height:auto;">
+        <div class="modal-content" style="height:100%;">
+            <div class="modal-header" style="background-color:#444444;height:80px;">
+                <button type="button" class="close" aria-label="Close">
+                    <i aria-hidden="true" class="w3-jumbo" style="font-size:60px;color:#fefefe;" data-dismiss="modal">&times;</i>
+                </button>
+                <h2 class="panel-title"style="font-weight:bold;color:#fefefe;margin-top:20px;">Order Now It's Free</h2>
+            </div>
+            <img src="~/Content/Images/logo.png" alt="Logo" class="center-block" style=" width:120px;height:120px;margin-top:20px;"/>
+ 
+            <div class="modal-body panel-body">
+
+
+                @using (Html.BeginForm("ContactUser", "Home", FormMethod.Post, new { @class = "contactUser_form contactForm lead", id = "Modal_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10 marginbot-10">
+                            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FromName, "", new { @class = "validation" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10 marginbot-10">
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FromEmail, "", new { @class = "validation" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Telephone, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10 marginbot-10">
+                            @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Telephone, "", new { @class = "validation" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10 marginbot-10">
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "validation" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10 marginbot-10">
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control area" ,rows="4"})
+                            @Html.ValidationMessageFor(m => m.Message, "", new { @class = "validation" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 marginbot-10">
+                            <input type="submit" class="btn btn-skin btn-block btn-lg" value="Send" id="submitModelbutton" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class=" col-md-10 marginbot-10" style="background-color:#f1f1f1;width:100%;margin-top:50px;height:60px;padding:15px;">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <span class="psw" style="font-size:15px;font-family: 'Open Sans', sans-serif;">Send Your Comments:<a href="mailto:alhabebmail@gmail.com">alhabebmail@gmail.com</a></span>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@*----------------------------------------------------*@
